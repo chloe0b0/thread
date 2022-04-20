@@ -42,3 +42,7 @@ class MarkovChain(object):
         sigma = sum(distr.values())
 
         return {k: v / sigma for k,v in distr.items()}
+    def connect(self, State0: Any, State1: Any, weight: float) -> None:
+        ''' Connect or modify State0 to State1 with a given weight (float) '''
+        if State0 not in self.markov_chain: self.markov_chain[State0] = dict()
+        self.markov_chain[State0][State1] = weight
