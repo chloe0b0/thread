@@ -7,7 +7,7 @@ def NGrams(s: str, N: int) -> list[str]:
     return [' '.join(array[i: i + N]) for i in range(0, len(array), N)]
 
 model = MarkovChain()
-text = open(r'D:\thread\src\alice_in_wonderland.txt', 'r', encoding = 'utf-8').read()
+text = open(r'./alice_in_wonderland.txt', 'r', encoding = 'utf-8').read()
 Sequence = NGrams(text, 3)
 model.fit(Sequence)
 
